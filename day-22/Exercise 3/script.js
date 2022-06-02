@@ -28,6 +28,8 @@ let head3 = document.createElement('p');
 
 let head1Span = document.createElement('span');
 
+
+
 head1.innerHTML = "Priyanka Saini challenges in ";
 head1Span.innerHTML = '2020';
 head2.textContent = "30DaysOfJavaScript Challenge";
@@ -39,8 +41,23 @@ head2.style.textDecoration = 'underline';
 head2.style.fontSize = '30px';
 head2.style.fontWeight = 'lighter';
 head3.style.display = 'inline';
-head3.style.backgroundColor = '#5a3f99';
+//head3.style.backgroundColor = '#5a3f99';
 head3.style.padding = '10px 20px 10px 20px';
+changeColor();
+function changeColor(){
+    let spanColorArray = ['#0307fc', '#b505fa','#241536','#061a03','#a2b7fa','#4b00cc']
+let inlineColorArray = ['#119e14','#0f4a0d','#6a9130','#87d618','#fa4f46','#5d00ff']
+
+let index = 0;
+
+setInterval( () => {
+    if(index >=spanColorArray.length) index = 0;
+    head1Span.style.color = spanColorArray[index];
+    head3.style.backgroundColor = inlineColorArray[index];
+    index++;
+},1000);
+}
+
 
 headingDiv.appendChild(head1);
 head1.appendChild(head1Span);
