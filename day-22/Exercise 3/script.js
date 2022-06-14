@@ -44,19 +44,6 @@ head3.style.display = 'inline';
 //head3.style.backgroundColor = '#5a3f99';
 head3.style.padding = '10px 20px 10px 20px';
 changeColor();
-function changeColor(){
-    let spanColorArray = ['#0307fc', '#b505fa','#241536','#061a03','#a2b7fa','#4b00cc']
-let inlineColorArray = ['#119e14','#0f4a0d','#6a9130','#87d618','#fa4f46','#5d00ff']
-
-let index = 0;
-
-setInterval( () => {
-    if(index >=spanColorArray.length) index = 0;
-    head1Span.style.color = spanColorArray[index];
-    head3.style.backgroundColor = inlineColorArray[index];
-    index++;
-},1000);
-}
 
 
 headingDiv.appendChild(head1);
@@ -77,31 +64,60 @@ for (index = 0; index <= 7; index++) {
     tableContent1.style.padding = '25px 20px 25px 20px';
 
     let content1 = document.createElement('div');
-    let content2 = document.createElement('div');
+    let content2 = document.createElement('details');
     let content3 = document.createElement('div');
 
+    let subTask = ['task1', 'task2', 'task3', 'task4'];
+    let content2Summary = document.createElement('summary');
+    content2Summary.innerHTML = tableContent2Data[index];
+    let content2list = document.createElement('ul');
+    content2list.style.listStyle = 'none';
+
     content1.textContent = tableContent1Data[index];
-    content2.textContent = tableContent2Data[index];
     content3.textContent = tableContent3Data[index];
 
-    if(tableContent3Data[index] == "Done") { 
+    if (tableContent3Data[index] == "Done") {
         tableContent1.style.backgroundColor = '#21bf74'
         content1.style.textDecoration = 'underline'
-    } 
-    else if(tableContent3Data[index] == 'Ongoing') {
+    }
+    else if (tableContent3Data[index] == 'Ongoing') {
         tableContent1.style.backgroundColor = '#fddb3b'
         content1.style.textDecoration = 'underline'
     }
     else
-        tableContent1.style.backgroundColor ='#ff5c53';
+        tableContent1.style.backgroundColor = '#ff5c53';
 
-    tableContent1.style.marginBottom = '5px';    
-    
+    tableContent1.style.marginBottom = '5px';
+
+    tableDiv.appendChild(tableContent1);
 
     tableContent1.appendChild(content1);
     tableContent1.appendChild(content2);
     tableContent1.appendChild(content3);
 
-
-    tableDiv.appendChild(tableContent1);
+    content2.appendChild(content2Summary);
+    content2.appendChild(content2list);
+    for (let i = 0; i < subTask.length; i++) {
+        let content2Task = document.createElement('li');
+        content2Task.innerHTML = subTask[i];
+        content2list.appendChild(content2Task);
+    }
 }
+
+function changeColor() {
+    let spanColorArray = ['#0307fc', '#b505fa', '#241536', '#061a03', '#a2b7fa', '#4b00cc']
+    let inlineColorArray = ['#119e14', '#0f4a0d', '#6a9130', '#87d618', '#fa4f46', '#5d00ff']
+
+    let index = 0;
+
+    setInterval(() => {
+        if (index >= spanColorArray.length) index = 0;
+        head1Span.style.color = spanColorArray[index];
+        head3.style.backgroundColor = inlineColorArray[index];
+        index++;
+    }, 1000);
+}
+
+  
+    
+    
