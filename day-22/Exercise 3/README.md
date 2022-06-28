@@ -1,6 +1,6 @@
 # 3PillarGlobal-JavaScript-Exercise3
 Internship Assignment Exercise (Completed)<br>
-This project is hosted live [here](http://priyankasaini.rf.gd/3pillarglobal/number-generator-day22/)
+This project is hosted live [here](http://priyankasaini.rf.gd/3pillarglobal/exercise3-day22/)
 
 ## Task
 In this Assignment Exercise 3, I was tasked to create a web page that looks similar to the one shown [here](https://github.com/Asabeneh/30-Days-Of-JavaScript/blob/master/22_Day_Manipulating_DOM_object/22_day_manipulating_DOM_object.md#exercises).
